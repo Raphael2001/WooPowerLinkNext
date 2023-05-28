@@ -1,0 +1,37 @@
+:root {
+  --cms-menu-background: #6ea5ce;
+  --cms-menu-title: #223e45;
+  --cms-menu-divider: #2c698f;
+  --cms-active-menu-tab-background: #2c698f;
+  --cms-active-menu-tab-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba(57, 168, 201, 0.4);
+  --cms-header-background: grey;
+  --cms-menu-item: white;
+  --cms-menu-item-active: white;
+  --cms-choose-image-btn: #0f476f;
+}
+
+.green {
+  --cms-menu-background: #e5ebe5;
+  --cms-menu-title: #3c4858;
+  --cms-menu-divider: rgba(180, 180, 180, 0.3);
+  --cms-active-menu-tab-background: #4caf50;
+  --cms-active-menu-tab-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba(76, 175, 80, 0.4);
+  --cms-header-background: grey;
+  --cms-menu-item: #3c4858;
+  --cms-menu-item-active: white;
+}
+.orange {
+  --cms-menu-background: #ffe0b2;
+  --cms-menu-title: #3c4858;
+  --cms-menu-divider: #ff9800;
+  --cms-active-menu-tab-background: #ff6d00;
+  --cms-active-menu-tab-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba(192, 87, 13, 0.4);
+  --cms-header-background: grey;
+  --cms-menu-item: #263238;
+  --cms-menu-item-active: white;
+  --cms-choose-image-btn: #ff6d00;
+
+}

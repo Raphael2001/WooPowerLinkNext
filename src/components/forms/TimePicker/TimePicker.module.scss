@@ -1,0 +1,296 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+$width: 150;
+
+.time-picker-wrapper {
+  width: vw_size($width, $current);
+  height: vw_size(40, $current);
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+  }
+  &.disabled {
+    opacity: 0.3;
+  }
+  &.active {
+    .time-picked-button {
+      z-index: 20;
+    }
+  }
+  .time-picked-button {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-inline: vw_size(12, $current);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $grey;
+    border-radius: vw_size(3, $current);
+    background-color: $white;
+
+    .time-picked {
+      font-family: $font-light;
+      font-size: vw_size(17, $current);
+    }
+    .clock-icon {
+      width: vw_size(20, $current);
+      height: vw_size(20, $current);
+      object-fit: contain;
+    }
+  }
+
+  .time-picker-container {
+    position: absolute;
+    width: vw_size($width, $current);
+    background-color: $white;
+    height: 0;
+    transition: all 300ms ease-in-out;
+    z-index: -1;
+
+    &.active {
+      height: vw_size(270, $current);
+      z-index: 30;
+      box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+        0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+      border-radius: vw_size(8, $current);
+      .actions {
+        display: flex;
+      }
+    }
+
+    .time-lists {
+      width: vw_size($width, $current);
+      display: flex;
+      flex-direction: row-reverse;
+      height: 87%;
+      overflow: hidden;
+      .time-panel-column {
+        width: 50%;
+        overflow: auto;
+        margin-block: vw_size(4, $current);
+        @include hideScrollbar;
+        &:nth-of-type(1) {
+          border-right: 1px solid rgba(5, 5, 5, 0.06);
+        }
+
+        list-style-type: none;
+        .time-cell {
+          height: vw_size(30, $current);
+          margin: 0 2px;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.selected {
+            background-color: #e6f4ff;
+            .time-cell-inner {
+              font-family: $font-medium;
+            }
+          }
+          .time-cell-inner {
+            font-size: vw_size(16, $current);
+            font-family: $font-light;
+            color: $grey;
+          }
+        }
+      }
+    }
+    .actions {
+      height: 13%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      margin-inline: vw_size(4, $current);
+      border-top: 1px solid rgba(5, 5, 5, 0.06);
+
+      .ok-button {
+        font-size: vw_size(16, $current);
+        width: vw_size(70, $current);
+        height: vw_size(20, $current);
+        @include cmsButtonBlue;
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  $width: 220;
+  .time-picker-wrapper {
+    width: vw_size($width, $current);
+    height: vw_size(40, $current);
+
+    .time-picked-button {
+      padding-inline: vw_size(12, $current);
+
+      border-radius: vw_size(3, $current);
+
+      .time-picked {
+        font-size: vw_size(17, $current);
+      }
+      .clock-icon {
+        width: vw_size(20, $current);
+        height: vw_size(20, $current);
+      }
+    }
+
+    .time-picker-container {
+      width: vw_size($width, $current);
+
+      &.active {
+        height: vw_size(270, $current);
+
+        border-radius: vw_size(8, $current);
+      }
+
+      .time-lists {
+        width: vw_size($width, $current);
+
+        .time-panel-column {
+          margin-block: vw_size(4, $current);
+
+          .time-cell {
+            height: vw_size(30, $current);
+
+            .time-cell-inner {
+              font-size: vw_size(16, $current);
+            }
+          }
+        }
+      }
+      .actions {
+        margin-inline: vw_size(4, $current);
+
+        .ok-button {
+          font-size: vw_size(16, $current);
+          width: vw_size(70, $current);
+          height: vw_size(20, $current);
+        }
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  $width: 220;
+  .time-picker-wrapper {
+    width: vw_size($width, $current);
+    height: vw_size(40, $current);
+
+    .time-picked-button {
+      padding-inline: vw_size(12, $current);
+
+      border-radius: vw_size(3, $current);
+
+      .time-picked {
+        font-size: vw_size(17, $current);
+      }
+      .clock-icon {
+        width: vw_size(20, $current);
+        height: vw_size(20, $current);
+      }
+    }
+
+    .time-picker-container {
+      width: vw_size($width, $current);
+
+      &.active {
+        height: vw_size(270, $current);
+
+        border-radius: vw_size(8, $current);
+      }
+
+      .time-lists {
+        width: vw_size($width, $current);
+
+        .time-panel-column {
+          margin-block: vw_size(4, $current);
+
+          .time-cell {
+            height: vw_size(30, $current);
+
+            .time-cell-inner {
+              font-size: vw_size(16, $current);
+            }
+          }
+        }
+      }
+      .actions {
+        margin-inline: vw_size(4, $current);
+
+        .ok-button {
+          font-size: vw_size(16, $current);
+          width: vw_size(70, $current);
+          height: vw_size(20, $current);
+        }
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+
+  $width: 220;
+  .time-picker-wrapper {
+    width: vw_size($width, $current);
+    height: vw_size(40, $current);
+
+    .time-picked-button {
+      padding-inline: vw_size(12, $current);
+
+      border-radius: vw_size(3, $current);
+
+      .time-picked {
+        font-size: vw_size(17, $current);
+      }
+      .clock-icon {
+        width: vw_size(20, $current);
+        height: vw_size(20, $current);
+      }
+    }
+
+    .time-picker-container {
+      width: vw_size($width, $current);
+
+      &.active {
+        height: vw_size(270, $current);
+
+        border-radius: vw_size(8, $current);
+      }
+
+      .time-lists {
+        width: vw_size($width, $current);
+
+        .time-panel-column {
+          margin-block: vw_size(4, $current);
+
+          .time-cell {
+            height: vw_size(30, $current);
+
+            .time-cell-inner {
+              font-size: vw_size(16, $current);
+            }
+          }
+        }
+      }
+      .actions {
+        margin-inline: vw_size(4, $current);
+
+        .ok-button {
+          font-size: vw_size(16, $current);
+          width: vw_size(70, $current);
+          height: vw_size(20, $current);
+        }
+      }
+    }
+  }
+}

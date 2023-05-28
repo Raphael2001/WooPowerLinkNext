@@ -1,0 +1,6 @@
+const SERVER_RESPONSES = {
+  SUCCESS: "SUCCESS",
+  REJECTED: "REJECTED",
+  ERROR: "ERROR",
+};
+export default SERVER_RESPONSES;

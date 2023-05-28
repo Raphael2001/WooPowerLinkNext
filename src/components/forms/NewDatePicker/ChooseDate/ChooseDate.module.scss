@@ -1,0 +1,65 @@
+@import "src/styles/imports.scss";
+
+$current: $mobile;
+
+.choose-date-wrapper {
+  width: vw_size(277, $current);
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  height: vw_size(164, $current);
+  overflow-y: scroll;
+  .option-card {
+    flex-basis: 33%;
+    font-size: vw_size(16, $current);
+    line-height: vw_size(18, $current);
+    color: #005688;
+    margin-top: vw_size(23, $current);
+    &.selected {
+      font-family: $font-semibold;
+    }
+  }
+}
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .choose-date-wrapper {
+    width: vw_size(277, $current);
+
+    height: vw_size(164, $current);
+    .option-card {
+      font-size: vw_size(16, $current);
+      line-height: vw_size(18, $current);
+      margin-top: vw_size(23, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .choose-date-wrapper {
+    width: vw_size(277, $current);
+
+    height: vw_size(164, $current);
+    .option-card {
+      font-size: vw_size(16, $current);
+      line-height: vw_size(18, $current);
+      margin-top: vw_size(23, $current);
+    }
+  }
+}
+
+@media (min-width: $media_desktop_large) {
+  $current: $desktop_max;
+  .choose-date-wrapper {
+    width: vw_size(277, $current);
+
+    height: vw_size(164, $current);
+    .option-card {
+      font-size: vw_size(16, $current);
+      line-height: vw_size(18, $current);
+      margin-top: vw_size(23, $current);
+    }
+  }
+}

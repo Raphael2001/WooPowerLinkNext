@@ -1,0 +1,35 @@
+input {
+  border-width: 0 0 1px 0;
+  border-color: 1px solid $grey;
+  border-radius: 0;
+  &:focus {
+    border-color: inherit;
+    outline: none;
+  }
+  &::-webkit-autofill {
+    box-shadow: 0 0 0 30px #ffffff inset;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 30px #ffffff inset;
+  }
+}
+
+textarea {
+  display: block;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+}

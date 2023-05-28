@@ -1,0 +1,79 @@
+@import "src/styles/imports";
+$current: $mobile;
+
+.blur-popup {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 200ms ease-out;
+  z-index: 10000;
+  height: 100%;
+  backdrop-filter: blur(14px);
+
+  .popup_wrapper {
+    height: 100%;
+    width: 100%;
+    .close-icon-wrapper {
+      cursor: pointer;
+      position: absolute;
+      z-index: 10000;
+      top: vw_size(15, $current);
+      left: vw_size(10, $current);
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+    }
+    .popup_content {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &.active,
+  &.done {
+    opacity: 1;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .blur-popup {
+    .popup_wrapper {
+      .close-icon-wrapper {
+        top: vw_size(15, $current);
+        left: vw_size(10, $current);
+        width: vw_size(18, $current);
+        height: vw_size(18, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .blur-popup {
+    .popup_wrapper {
+      .close-icon-wrapper {
+        top: vw_size(15, $current);
+        left: vw_size(10, $current);
+        width: vw_size(18, $current);
+        height: vw_size(18, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+
+  .blur-popup {
+    .popup_wrapper {
+      .close-icon-wrapper {
+        top: vw_size(15, $current);
+        left: vw_size(10, $current);
+        width: vw_size(18, $current);
+        height: vw_size(18, $current);
+      }
+    }
+  }
+}

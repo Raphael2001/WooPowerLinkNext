@@ -1,0 +1,179 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.all-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .search-box {
+    width: vw_size(200, $current);
+    margin: vw_size(20, $current) 0;
+  }
+
+  .medias-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: vw_size(20, $current) 0;
+    width: 100%;
+
+    .media-container {
+      border-radius: vw_size(10, $current);
+      width: vw_size(300, $current);
+      height: vw_size(300, $current);
+      margin-bottom: vw_size(20, $current);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      background-color: $white;
+      box-shadow: 0 0 vw_size(15, $current) rgba(0,0,0,0.3);
+      transition: 300ms;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 vw_size(15, $current) rgba(0,0,0,0.7);
+      }
+
+      .media {
+        width: 100%;
+        height: vw_size(250, $current);
+        object-fit: cover;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-top-left-radius: vw_size(10, $current);
+        border-top-right-radius: vw_size(10, $current);
+      }
+
+      .media-container-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+        padding-inline: vw_size(15, $current);
+
+        .media-name {
+          font-weight: bold;
+        }
+
+        .media-delete {
+          height: vw_size(20, $current);
+          width: vw_size(20, $current);
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .all-media {
+    .search-box {
+      width: vw_size(500, $current);
+      margin: vw_size(20, $current) 0;
+    }
+    .medias-container {
+      flex-direction: row;
+      align-items: unset;
+      flex-wrap: wrap;
+      flex-basis: auto;
+      padding: vw_size(30, $current) vw_size(69, $current);
+
+      .media-container {
+        border-radius: vw_size(10, $current);
+        width: vw_size(300, $current);
+        height: vw_size(300, $current);
+        margin-bottom: vw_size(30, $current);
+        box-shadow: 0 0 vw_size(15, $current) rgba(0,0,0,0.3);
+
+        &:nth-of-type(2n+1) {
+          margin-inline-end: vw_size(30, $current);
+          //margin-inline-start: auto;
+        }
+
+        &:nth-of-type(2n+2) {
+          margin-inline-end: auto;
+        }
+
+        &:hover {
+          box-shadow: 0 0 vw_size(15, $current) rgba(0,0,0,0.7);
+        }
+
+        .media {
+          height: vw_size(250, $current);
+          border-top-left-radius: vw_size(10, $current);
+          border-top-right-radius: vw_size(10, $current);
+        }
+
+        .media-container-footer {
+          padding-inline: vw_size(15, $current);
+
+          .media-delete {
+            height: vw_size(20, $current);
+            width: vw_size(20, $current);
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+  .all-media {
+    align-items: flex-start;
+
+    .search-box {
+      width: vw_size(500, $current);
+      margin: vw_size(50, $current) 0;
+    }
+
+    .medias-container {
+      padding: vw_size(20, $current) vw_size(63, $current);
+
+      .media-container {
+        border-radius: vw_size(10, $current);
+        width: vw_size(300, $current);
+        height: vw_size(300, $current);
+        margin-bottom: vw_size(30, $current);
+        box-shadow: 0 0 vw_size(15, $current) rgba(0,0,0,0.3);
+
+        &:nth-of-type(4n+1) {
+          margin-inline-end: vw_size(30, $current);
+        }
+        &:nth-of-type(4n+2) {
+          margin-inline-end: vw_size(30, $current);
+        }
+
+        &:nth-of-type(4n+3) {
+          margin-inline-end: vw_size(30, $current);
+        }
+
+        &:nth-of-type(4n+4){
+          margin-inline-end: auto;
+        }
+
+        &:hover {
+          box-shadow: 0 0 vw_size(15, $current) rgba(0,0,0,0.7);
+        }
+
+        .media {
+          height: vw_size(250, $current);
+          border-top-left-radius: vw_size(10, $current);
+          border-top-right-radius: vw_size(10, $current);
+        }
+
+        .media-container-footer {
+          padding-inline: vw_size(15, $current);
+
+          .media-delete {
+            height: vw_size(20, $current);
+            width: vw_size(20, $current);
+          }
+        }
+      }
+    }
+  }
+}

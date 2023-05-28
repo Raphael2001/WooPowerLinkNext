@@ -1,0 +1,17 @@
+.main-container {
+  min-height: 100vh;
+  .powerlink-products-autocomplete {
+    width: 100%;
+    :global(.MuiButtonBase-root) {
+      :global(.MuiChip-deleteIcon) {
+        margin: 0 5px 0 5px;
+      }
+    }
+  }
+  .button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

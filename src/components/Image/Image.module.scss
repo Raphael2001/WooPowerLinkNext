@@ -1,0 +1,110 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.image-container {
+  padding-top: vw_size(40, $current);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .image-chooser {
+    margin: 0 auto;
+    border: 1px solid black;
+    height: vw_size(250, $current);
+    width: vw_size(250, $current);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+
+    .image-file {
+      margin: 0 auto;
+      color: transparent;
+      width: vw_size(130, $current);
+
+      &::-webkit-file-upload-button {
+        display: none;
+      }
+      &::before {
+        content: "נא לבחור תמונה";
+        display: inline-block;
+        border-radius: 10px;
+        padding: 9px 13px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        font-size: vw_size(16, $current);
+        background: $cms-choose-image-btn;
+        color: white;
+      }
+    }
+  }
+  .image {
+    width: vw_size(200, $current);
+  }
+  .input-wrapper {
+    margin: vw_size(30, $current) vw_size(15, $current) 0;
+  }
+  .button {
+    cursor: pointer;
+    margin-top: vw_size(25, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .image-container {
+    padding-top: vw_size(40, $current);
+    .image-chooser {
+      height: vw_size(250, $current);
+      width: vw_size(250, $current);
+
+      .image-file {
+        width: vw_size(150, $current);
+
+        &::before {
+          font-size: vw_size(20, $current);
+        }
+      }
+    }
+    .image {
+      width: vw_size(200, $current);
+    }
+    .input-wrapper {
+      margin: vw_size(30, $current) vw_size(15, $current) 0;
+    }
+    .button {
+      width: vw_size(100, $current);
+      margin-top: vw_size(25, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+  .image-container {
+    padding-top: vw_size(40, $current);
+    .image-chooser {
+      height: vw_size(350, $current);
+      width: vw_size(350, $current);
+
+      .image-file {
+        width: vw_size(190, $current);
+
+        &::before {
+          font-size: vw_size(25, $current);
+        }
+      }
+    }
+    .image {
+      width: vw_size(200, $current);
+    }
+    .input-wrapper {
+      margin: vw_size(30, $current) vw_size(15, $current) 0;
+    }
+    .button {
+      font-size: vw_size(20, $current);
+      width: vw_size(200, $current);
+      margin-top: vw_size(25, $current);
+    }
+  }
+}

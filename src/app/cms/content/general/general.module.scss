@@ -1,0 +1,147 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+
+.general-info-wrapper {
+  .btn-wrapper {
+    width: vw_size(100, $current);
+    display: flex;
+    justify-content: center;
+    .button {
+      font-size: vw_size(16, $current);
+      width: vw_size(70, $current);
+      height: vw_size(25, $current);
+    }
+  }
+  .general-info-title {
+    margin: 0;
+
+    margin-top: vw_size(15, $current);
+    font-size: vw_size(20, $current);
+  }
+
+  .general-info-row {
+    display: flex;
+    margin-top: vw_size(15, $current);
+    .general-info-name {
+      width: vw_size(70, $current);
+      font-size: vw_size(16, $current);
+    }
+    .input-wrapper {
+      width: vw_size(150, $current);
+      .input {
+        width: 100%;
+        font-size: vw_size(16, $current);
+      }
+    }
+  }
+
+  .mail-subtitle {
+    font-size: vw_size(14, $current);
+  }
+  .mail-row {
+    display: flex;
+    margin-top: vw_size(15, $current);
+    .mail,
+    .input-wrapper {
+      width: vw_size(220, $current);
+      .input {
+        width: 100%;
+        font-size: vw_size(16, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .general-info-wrapper {
+    .btn-wrapper {
+      width: vw_size(170, $current);
+
+      .button {
+        font-size: vw_size(20, $current);
+        width: vw_size(120, $current);
+        height: vw_size(30, $current);
+      }
+    }
+
+    .general-info-row {
+      margin-top: vw_size(15, $current);
+      .general-info-name {
+        width: vw_size(150, $current);
+        font-size: vw_size(20, $current);
+      }
+      .input-wrapper {
+        width: vw_size(250, $current);
+        .input {
+          font-size: vw_size(20, $current);
+        }
+      }
+    }
+    .general-info-title {
+      margin-top: vw_size(15, $current);
+      font-size: vw_size(25, $current);
+    }
+    .mail-subtitle {
+      font-size: vw_size(16, $current);
+    }
+    .mail-row {
+      margin-top: vw_size(20, $current);
+      .mail,
+      .input-wrapper {
+        width: vw_size(400, $current);
+        .input {
+          font-size: vw_size(20, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+
+  .general-info-wrapper {
+    .btn-wrapper {
+      width: vw_size(200, $current);
+
+      .button {
+        font-size: vw_size(25, $current);
+        width: vw_size(170, $current);
+        height: vw_size(35, $current);
+      }
+    }
+
+    .general-info-row {
+      margin-top: vw_size(25, $current);
+      .general-info-name {
+        width: vw_size(200, $current);
+        font-size: vw_size(25, $current);
+      }
+      .input-wrapper {
+        width: vw_size(300, $current);
+        .input {
+          font-size: vw_size(25, $current);
+        }
+      }
+    }
+    .general-info-title {
+      margin-top: vw_size(15, $current);
+      font-size: vw_size(30, $current);
+    }
+    .mail-subtitle {
+      font-size: vw_size(28, $current);
+    }
+    .mail-row {
+      margin-top: vw_size(25, $current);
+      .mail,
+      .input-wrapper {
+        width: vw_size(500, $current);
+        .input {
+          font-size: vw_size(25, $current);
+        }
+      }
+    }
+  }
+}

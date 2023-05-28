@@ -1,0 +1,102 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.texts-popup {
+  .popup_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .texts-title {
+      font-size: vw_size(25, $current);
+      margin-top: vw_size(5, $current);
+    }
+    .text-row {
+      width: 88%;
+      display: flex;
+      margin-top: vw_size(30, $current);
+      .language-name {
+        font-size: vw_size(18, $current);
+        width: 30%;
+      }
+      .input-wrapper {
+        width: vw_size(170, $current);
+        .input {
+          width: 100%;
+          font-size: vw_size(18, $current);
+        }
+      }
+    }
+    .button-wrapper {
+      margin-top: vw_size(20, $current);
+      .button {
+        width: vw_size(100, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .texts-popup {
+    .popup_content {
+      .texts-title {
+        font-size: vw_size(25, $current);
+        margin-top: vw_size(25, $current);
+      }
+      .text-row {
+        margin-top: vw_size(30, $current);
+        .language-name {
+          font-size: vw_size(18, $current);
+        }
+        .input-wrapper {
+          width: vw_size(170, $current);
+          .input {
+            font-size: vw_size(18, $current);
+          }
+        }
+      }
+      .button-wrapper {
+        margin-top: vw_size(50, $current);
+        .button {
+          font-size: vw_size(18, $current);
+          width: vw_size(100, $current);
+          height: vw_size(30, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+
+  .texts-popup {
+    .popup_content {
+      .texts-title {
+        font-size: vw_size(25, $current);
+        margin-top: vw_size(30, $current);
+      }
+      .text-row {
+        margin-top: vw_size(30, $current);
+        .language-name {
+          font-size: vw_size(25, $current);
+        }
+        .input-wrapper {
+          width: vw_size(300, $current);
+          .input {
+            font-size: vw_size(18, $current);
+          }
+        }
+      }
+      .button-wrapper {
+        margin-top: vw_size(50, $current);
+        .button {
+          font-size: vw_size(25, $current);
+          width: vw_size(170, $current);
+          height: vw_size(35, $current);
+        }
+      }
+    }
+  }
+}

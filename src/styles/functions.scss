@@ -1,0 +1,4 @@
+@function vw_size($px_size, $design_width) {
+    $vw_size: ($px_size / $design_width) * 100;
+    @return $vw_size + vw;
+}

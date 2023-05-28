@@ -1,0 +1,93 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.all-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  .add-buttom-wrapper {
+    margin: vw_size(20, $current) auto;
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    .header-title {
+      width: 50%;
+      text-align: center;
+      font-size: vw_size(16, $current);
+    }
+  }
+  .button {
+    width: vw_size(70, $current);
+    height: vw_size(25, $current);
+  }
+  .text-field-wrapper {
+    margin-top: vw_size(10, $current);
+    display: flex;
+    flex-direction: row;
+    .key {
+      width: 50%;
+
+      text-align: center;
+      font-size: vw_size(16, $current);
+    }
+    .button-wrapper {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .all-text-wrapper {
+    .header {
+      .header-title {
+        font-size: vw_size(16, $current);
+      }
+    }
+    .add-buttom-wrapper {
+      margin: vw_size(20, $current) auto;
+    }
+    .text-field-wrapper {
+      margin-top: vw_size(10, $current);
+
+      .key {
+        font-size: vw_size(16, $current);
+      }
+    }
+
+    .button {
+      width: vw_size(150, $current);
+      height: vw_size(30, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+
+  .all-text-wrapper {
+    .header {
+      .header-title {
+        font-size: vw_size(25, $current);
+      }
+    }
+    .add-buttom-wrapper {
+      margin: vw_size(20, $current) auto;
+    }
+    .text-field-wrapper {
+      margin-top: vw_size(10, $current);
+
+      .key {
+        font-size: vw_size(23, $current);
+      }
+    }
+    .button {
+      width: vw_size(300, $current);
+      height: vw_size(40, $current);
+      font-size: vw_size(20, $current);
+    }
+  }
+}

@@ -1,0 +1,539 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+
+$border: #888888;
+$selectedDate: #005688;
+$disabled: #b6b6b6;
+
+.custom-datepicker-wrapper {
+  width: vw_size(150, $current);
+  &.active {
+    .custom-datepicker-btn-wrapper {
+      z-index: 20;
+    }
+    .custom-datepicker {
+      z-index: 30;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    z-index: 10;
+  }
+
+  &.open-year-month-select {
+    .custom-datepicker {
+      :global(.react-datepicker-popper) {
+        :global(.react-datepicker) {
+          :global(.react-datepicker__month-container) {
+            :global(.react-datepicker__day-name),
+            :global(.react-datepicker__day) {
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .custom-datepicker-btn-wrapper {
+    position: relative;
+    display: flex;
+    border: 1px solid $border;
+    border-radius: vw_size(3, $current);
+    width: 100%;
+    height: vw_size(40, $current);
+    justify-content: space-between;
+    align-items: center;
+    padding-right: vw_size(13, $current);
+    padding-left: vw_size(10, $current);
+    .custom-datepicker-btn {
+      position: absolute;
+      top: 25%;
+      right: vw_size(13, $current);
+      font-family: $font-light;
+      font-size: vw_size(16, $current);
+      line-height: vw_size(18, $current);
+      transition: all 200ms;
+      &.floating {
+        top: -25%;
+        background: white;
+        right: vw_size(5, $current);
+        font-size: vw_size(14, $current);
+        font-family: $font;
+        padding-left: vw_size(10, $current);
+        padding-right: vw_size(3, $current);
+      }
+    }
+    .custom-datepicker-icon {
+      margin-right: auto;
+    }
+  }
+  .custom-datepicker {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    :global(.react-datepicker-wrapper) {
+      padding-top: vw_size(15, $current);
+      :global(.react-datepicker__input-container) {
+        display: none;
+      }
+    }
+    :global(.react-datepicker__tab-loop) {
+      :global(.react-datepicker-popper) {
+        position: static !important;
+        padding: 0;
+        transform: translate3d(0px, -6px, 0px) !important;
+
+        :global(.react-datepicker) {
+          width: vw_size(279, $current);
+          border: 1px solid $border;
+          padding-bottom: vw_size(25, $current);
+          :global(.react-datepicker__triangle) {
+            display: none;
+            transform: translate3d(
+              vw_size(139.5, $current),
+              0px,
+              0px
+            ) !important;
+            &::before {
+              border-bottom-color: $border;
+            }
+          }
+          :global(.react-datepicker__month-container) {
+            width: 100%;
+            float: unset;
+
+            :global(.react-datepicker__header) {
+              background: white;
+              border: none;
+              padding: 0;
+              .header-select {
+                position: relative;
+                .header-wrapper {
+                  padding: vw_size(22, $current) vw_size(20, $current);
+                  display: flex;
+                  justify-content: space-between;
+                  .selected-month-year {
+                    font-size: vw_size(18, $current);
+                    line-height: vw_size(18, $current);
+                    color: $selectedDate;
+                    text-decoration: underline;
+                    font-family: $font-light;
+                    .selected-year {
+                      margin-left: vw_size(12, $current);
+                    }
+                  }
+                  .nav-months {
+                    display: flex;
+                    .arrow-up {
+                      transform: rotate(180deg);
+                      margin-left: vw_size(10, $current);
+                    }
+                    .arrow-down {
+                      margin-right: vw_size(10, $current);
+                    }
+                  }
+                }
+                .select-year-month {
+                  position: absolute;
+                  top: vw_size(50, $current);
+                  bottom: 0;
+                  height: vw_size(238, $current);
+                  background: white;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  .select-month,
+                  .select-year {
+                    display: none;
+                    &.show {
+                      display: block;
+                    }
+                  }
+                  .today-button {
+                    margin-top: vw_size(33, $current);
+                    border: 1px solid $border;
+                    width: vw_size(129, $current);
+                    height: vw_size(35, $current);
+                    border-radius: vw_size(3, $current);
+                    font-size: vw_size(16, $current);
+                    line-height: vw_size(18, $current);
+                  }
+                }
+              }
+              :global(.react-datepicker__day-names) {
+                :global(.react-datepicker__day-name) {
+                  font-size: vw_size(14, $current);
+                }
+              }
+            }
+            :global(.react-datepicker__day-name),
+            :global(.react-datepicker__day) {
+              width: vw_size(30, $current);
+              height: vw_size(30, $current);
+              line-height: vw_size(30, $current);
+              text-align: center;
+              vertical-align: middle;
+              font-family: $font-light;
+              margin: vw_size(2, $current);
+            }
+            :global(.react-datepicker__month) {
+              :global(.react-datepicker__week) {
+                :global(.react-datepicker__day) {
+                  font-size: vw_size(16, $current);
+                  color: $selectedDate;
+                  &:global(.react-datepicker__day--selected) {
+                    background-color: $selectedDate;
+                    border-radius: 50%;
+                    color: white;
+                    font-family: $font-medium;
+                  }
+                  &:global(.react-datepicker__day--disabled) {
+                    color: $disabled;
+                  }
+                  &:global(.react-datepicker__day--outside-month) {
+                    opacity: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .custom-datepicker-wrapper {
+    width: vw_size(220, $current);
+
+    .custom-datepicker-btn-wrapper {
+      border-radius: vw_size(3, $current);
+      height: vw_size(40, $current);
+
+      padding-right: vw_size(13, $current);
+      padding-left: vw_size(10, $current);
+      .custom-datepicker-btn {
+        right: vw_size(13, $current);
+        font-size: vw_size(16, $current);
+        line-height: vw_size(18, $current);
+        &.floating {
+          right: vw_size(8, $current);
+          font-size: vw_size(14, $current);
+          padding-left: vw_size(15, $current);
+          padding-right: vw_size(3, $current);
+        }
+      }
+    }
+    .custom-datepicker {
+      left: unset;
+      right: unset;
+      display: unset;
+      :global(.react-datepicker-wrapper) {
+        padding-top: unset;
+      }
+
+      :global(.react-datepicker__tab-loop) {
+        :global(.react-datepicker-popper) {
+          position: static !important;
+          transform: translate3d(0px, -6px, 0px) !important;
+          :global(.react-datepicker) {
+            width: vw_size(279, $current);
+            padding-bottom: vw_size(25, $current);
+            :global(.react-datepicker__triangle) {
+              display: block;
+              transform: translate3d(
+                vw_size(80, $current),
+                0px,
+                0px
+              ) !important;
+            }
+            :global(.react-datepicker__month-container) {
+              :global(.react-datepicker__header) {
+                .header-select {
+                  .header-wrapper {
+                    padding: vw_size(22, $current) vw_size(20, $current);
+
+                    .selected-month-year {
+                      font-size: vw_size(18, $current);
+                      line-height: vw_size(18, $current);
+
+                      .selected-year {
+                        margin-left: vw_size(12, $current);
+                      }
+                    }
+                    .nav-months {
+                      .arrow-up {
+                        margin-left: vw_size(10, $current);
+                      }
+                      .arrow-down {
+                        margin-right: vw_size(10, $current);
+                      }
+                    }
+                  }
+                  .select-year-month {
+                    top: vw_size(50, $current);
+
+                    height: vw_size(238, $current);
+
+                    .today-button {
+                      margin-top: vw_size(33, $current);
+                      width: vw_size(129, $current);
+                      height: vw_size(35, $current);
+                      border-radius: vw_size(3, $current);
+                      font-size: vw_size(16, $current);
+                      line-height: vw_size(18, $current);
+                    }
+                  }
+                }
+                :global(.react-datepicker__day-names) {
+                  :global(.react-datepicker__day-name) {
+                    font-size: vw_size(14, $current);
+                  }
+                }
+              }
+              :global(.react-datepicker__day-name),
+              :global(.react-datepicker__day) {
+                width: vw_size(30, $current);
+                height: vw_size(30, $current);
+                line-height: vw_size(30, $current);
+
+                margin: vw_size(2, $current);
+              }
+              :global(.react-datepicker__month) {
+                :global(.react-datepicker__week) {
+                  :global(.react-datepicker__day) {
+                    font-size: vw_size(16, $current);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .custom-datepicker-wrapper {
+    width: vw_size(220, $current);
+
+    .custom-datepicker-btn-wrapper {
+      border-radius: vw_size(3, $current);
+      height: vw_size(40, $current);
+
+      padding-right: vw_size(13, $current);
+      padding-left: vw_size(10, $current);
+      .custom-datepicker-btn {
+        right: vw_size(13, $current);
+        font-size: vw_size(16, $current);
+        line-height: vw_size(18, $current);
+        &.floating {
+          right: vw_size(8, $current);
+          font-size: vw_size(14, $current);
+          padding-left: vw_size(15, $current);
+          padding-right: vw_size(3, $current);
+        }
+      }
+    }
+    .custom-datepicker {
+      :global(.react-datepicker__tab-loop) {
+        :global(.react-datepicker-popper) {
+          :global(.react-datepicker) {
+            width: vw_size(279, $current);
+            padding-bottom: vw_size(25, $current);
+            :global(.react-datepicker__triangle) {
+              transform: translate3d(
+                vw_size(80, $current),
+                0px,
+                0px
+              ) !important;
+            }
+            :global(.react-datepicker__month-container) {
+              :global(.react-datepicker__header) {
+                .header-select {
+                  .header-wrapper {
+                    padding: vw_size(22, $current) vw_size(20, $current);
+
+                    .selected-month-year {
+                      font-size: vw_size(18, $current);
+                      line-height: vw_size(18, $current);
+
+                      .selected-year {
+                        margin-left: vw_size(12, $current);
+                      }
+                    }
+                    .nav-months {
+                      .arrow-up {
+                        margin-left: vw_size(10, $current);
+                      }
+                      .arrow-down {
+                        margin-right: vw_size(10, $current);
+                      }
+                    }
+                  }
+                  .select-year-month {
+                    top: vw_size(50, $current);
+
+                    height: vw_size(238, $current);
+
+                    .today-button {
+                      margin-top: vw_size(33, $current);
+                      width: vw_size(129, $current);
+                      height: vw_size(35, $current);
+                      border-radius: vw_size(3, $current);
+                      font-size: vw_size(16, $current);
+                      line-height: vw_size(18, $current);
+                    }
+                  }
+                }
+                :global(.react-datepicker__day-names) {
+                  :global(.react-datepicker__day-name) {
+                    font-size: vw_size(14, $current);
+                  }
+                }
+              }
+              :global(.react-datepicker__day-name),
+              :global(.react-datepicker__day) {
+                width: vw_size(30, $current);
+                height: vw_size(30, $current);
+                line-height: vw_size(30, $current);
+
+                margin: vw_size(2, $current);
+              }
+              :global(.react-datepicker__month) {
+                :global(.react-datepicker__week) {
+                  :global(.react-datepicker__day) {
+                    font-size: vw_size(16, $current);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media_desktop_large) {
+  $current: $desktop_max;
+  .custom-datepicker-wrapper {
+    width: vw_size(220, $current);
+
+    .custom-datepicker-btn-wrapper {
+      border-radius: vw_size(3, $current);
+      height: vw_size(40, $current);
+
+      padding-right: vw_size(13, $current);
+      padding-left: vw_size(10, $current);
+      .custom-datepicker-btn {
+        right: vw_size(13, $current);
+        font-size: vw_size(16, $current);
+        line-height: vw_size(18, $current);
+        &.floating {
+          right: vw_size(8, $current);
+          font-size: vw_size(14, $current);
+          padding-left: vw_size(15, $current);
+          padding-right: vw_size(3, $current);
+        }
+      }
+    }
+    .custom-datepicker {
+      :global(.react-datepicker__tab-loop) {
+        :global(.react-datepicker-popper) {
+          :global(.react-datepicker) {
+            width: vw_size(279, $current);
+            padding-bottom: vw_size(25, $current);
+            :global(.react-datepicker__triangle) {
+              transform: translate3d(
+                vw_size(80, $current),
+                0px,
+                0px
+              ) !important;
+            }
+            :global(.react-datepicker__month-container) {
+              :global(.react-datepicker__header) {
+                .header-select {
+                  .header-wrapper {
+                    padding: vw_size(22, $current) vw_size(20, $current);
+
+                    .selected-month-year {
+                      font-size: vw_size(18, $current);
+                      line-height: vw_size(18, $current);
+
+                      .selected-year {
+                        margin-left: vw_size(12, $current);
+                      }
+                    }
+                    .nav-months {
+                      .arrow-up {
+                        margin-left: vw_size(10, $current);
+                        transform: rotate(180deg);
+                      }
+                      .arrow-down {
+                        margin-right: vw_size(10, $current);
+                      }
+                    }
+                  }
+                  .select-year-month {
+                    top: vw_size(50, $current);
+
+                    height: vw_size(238, $current);
+
+                    .today-button {
+                      margin-top: vw_size(33, $current);
+                      width: vw_size(129, $current);
+                      height: vw_size(35, $current);
+                      border-radius: vw_size(3, $current);
+                      font-size: vw_size(16, $current);
+                      line-height: vw_size(18, $current);
+                    }
+                  }
+                }
+                :global(.react-datepicker__day-names) {
+                  :global(.react-datepicker__day-name) {
+                    font-size: vw_size(14, $current);
+                  }
+                }
+              }
+              :global(.react-datepicker__day-name),
+              :global(.react-datepicker__day) {
+                width: vw_size(30, $current);
+                height: vw_size(30, $current);
+                line-height: vw_size(30, $current);
+
+                margin: vw_size(2, $current);
+              }
+              :global(.react-datepicker__month) {
+                :global(.react-datepicker__week) {
+                  :global(.react-datepicker__day) {
+                    font-size: vw_size(16, $current);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+$background-color: #ffffff;
+$popup-background: #e8dfbc;
+$loader-color: #000000;
+$text-color: #000000;
+$grey-divider: #e7e8e4;
+$dark-grey: #565555;
+$text-black: #0c0803;
+$grey: #9fa0a4;
+
+$cmsRed: #d63646;
+$cmsBlue: #0f476f;
+$cmsGreen: #32cb87;
+$white: white;
+$black: black;
+
+$appleRed: #ff605c;
+$appleYellow: #ffbd44;
+$appleGreen: #00ca4e;
+
+/* fonts */
+$font: "Heebo-Regular";
+$font-light: "Heebo-Light";
+$font-medium: "Heebo-Medium";
+$font-semibold: "Heebo-SemiBold";
+$font-bold: "Heebo-Bold";
+
+/* break points */
+$mobile: 320;
+$tablet: 768;
+$desktop: 1200;
+$desktop_large: 1500;
+$desktop_max: 1920;
+
+/* media queries */
+$media-tablet: $tablet + px;
+$media-desktop: $desktop + px;
+$media-desktop_large: $desktop_large + px;
+
+/************* cms login *************/
+$button-background-login: linear-gradient(
+  62deg,
+  rgba(39, 64, 96, 1) 0%,
+  rgba(27, 40, 69, 1) 100%
+);
+$background-color-login: linear-gradient(
+  120deg,
+  rgba(32, 164, 243, 1) 0%,
+  rgba(39, 64, 96, 1) 50%,
+  rgba(27, 40, 69, 1) 100%
+);
+/************* end *************/
+
+/************* cms menu *************/
+
+$cms-menu-background: var(--cms-menu-background);
+$cms-menu-title: var(--cms-menu-title);
+$cms-menu-divider: var(--cms-menu-divider);
+$cms-active-menu-tab-background: var(--cms-active-menu-tab-background);
+$cms-active-menu-tab-box-shadow: var(--cms-active-menu-tab-box-shadow);
+
+$cms-header-background: var(--cms-header-background);
+
+$cms-menu-item: var(--cms-menu-item);
+$cms-menu-item-active: var(--cms-menu-item-active);
+
+/************* end *************/
+
+/************* cms add new image *************/
+
+$cms-choose-image-btn: var(--cms-choose-image-btn);
+
+/************* end *************/

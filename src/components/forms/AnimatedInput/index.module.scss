@@ -1,0 +1,127 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+
+$focus: #2c698f;
+.animated-input-wrapper {
+  position: relative;
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .placeholder {
+    position: absolute;
+    right: 0;
+    transition: all 100ms ease-out;
+    transform-origin: right;
+    pointer-events: none;
+    color: black;
+    font-size: vw_size(18, $current);
+
+    &.animated {
+      transform: translate(0, vw_size(-20, $current)) scale(0.9);
+    }
+  }
+
+  .input {
+    width: 100%;
+    font-size: vw_size(16, $current);
+
+    &:focus {
+      border-color: $focus;
+      + .placeholder {
+        color: $focus;
+
+        transform: translate(0, vw_size(-20, $current)) scale(0.9);
+      }
+    }
+  }
+  .error-text {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: vw_size(12, $current);
+    color: $appleRed;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .animated-input-wrapper {
+    .placeholder {
+      font-size: vw_size(18, $current);
+
+      &.animated {
+        transform: translate(0, vw_size(-22, $current)) scale(0.9);
+      }
+    }
+
+    .input {
+      font-size: vw_size(18, $current);
+
+      &:focus {
+        + .placeholder {
+          transform: translate(0, vw_size(-22, $current)) scale(0.9);
+        }
+      }
+    }
+    .error-text {
+      font-size: vw_size(12, $current);
+    }
+  }
+}
+
+@media (min-width: $media_desktop) {
+  $current: $desktop;
+
+  .animated-input-wrapper {
+    .placeholder {
+      font-size: vw_size(18, $current);
+
+      &.animated {
+        transform: translate(0, vw_size(-22, $current)) scale(0.9);
+      }
+    }
+
+    .input {
+      font-size: vw_size(18, $current);
+
+      &:focus {
+        + .placeholder {
+          transform: translate(0, vw_size(-22, $current)) scale(0.9);
+        }
+      }
+    }
+    .error-text {
+      font-size: vw_size(12, $current);
+    }
+  }
+}
+
+@media (min-width: $media_desktop_large) {
+  $current: $desktop_max;
+
+  .animated-input-wrapper {
+    .placeholder {
+      font-size: vw_size(18, $current);
+
+      &.animated {
+        transform: translate(0, vw_size(-22, $current)) scale(0.9);
+      }
+    }
+
+    .input {
+      font-size: vw_size(18, $current);
+
+      &:focus {
+        + .placeholder {
+          transform: translate(0, vw_size(-22, $current)) scale(0.9);
+        }
+      }
+    }
+    .error-text {
+      font-size: vw_size(12, $current);
+    }
+  }
+}

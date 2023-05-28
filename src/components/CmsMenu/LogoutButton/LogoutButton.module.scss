@@ -1,0 +1,48 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.logout-wrapper {
+  padding-inline-start: vw_size(20, $current);
+  padding-bottom: vw_size(50, $current);
+  .logout-button {
+    .logout-image {
+      width: vw_size(20, $current);
+    }
+    .logout-title {
+      margin-inline-start: vw_size(5, $current);
+      font-size: vw_size(18, $current);
+      font-family: $font-light;
+    }
+  }
+}
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .logout-wrapper {
+    padding-inline-start: vw_size(20, $current);
+    padding-bottom: vw_size(50, $current);
+    .logout-button {
+      .logout-image {
+        width: vw_size(20, $current);
+      }
+      .logout-title {
+        margin-inline-start: vw_size(5, $current);
+        font-size: vw_size(18, $current);
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+  .logout-wrapper {
+    padding-inline-start: vw_size(50, $current);
+    padding-bottom: vw_size(50, $current);
+    .logout-button {
+      .logout-image {
+        width: vw_size(30, $current);
+      }
+      .logout-title {
+        margin-inline-start: vw_size(5, $current);
+        font-size: vw_size(24, $current);
+      }
+    }
+  }
+}

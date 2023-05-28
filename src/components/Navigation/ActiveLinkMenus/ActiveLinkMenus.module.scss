@@ -1,0 +1,19 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.active-menu-link {
+  margin-inline-start: vw_size(15, $current);
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .active-menu-link {
+    margin-inline-start: vw_size(15, $current);
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+  .active-menu-link {
+    margin-inline-start: vw_size(15, $current);
+  }
+}

@@ -1,0 +1,201 @@
+$animation-time: 1s;
+$size: 30px;
+$line-height: 2px;
+$border-radius: 2px;
+$color: #fafafa;
+.navbar-toggler {
+  width: $size;
+  height: $size;
+
+  .label {
+    position: relative;
+    width: $size;
+    height: $size;
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      margin-top: -$line-height/2;
+      width: $size;
+      height: $line-height;
+      border-radius: $border-radius;
+      background: $color;
+      animation: animationOneReverse $animation-time ease forwards;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      margin-top: -$line-height/2;
+      width: $size;
+      height: $line-height;
+      border-radius: $border-radius;
+      background: $color;
+      animation: animationTwoReverse $animation-time ease forwards;
+    }
+    .burger {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 2 * $line-height;
+        width: $size;
+        height: $line-height;
+        border-radius: $border-radius;
+        background: $color;
+        animation: animationBurgerTopReverse $animation-time ease forwards;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 2 * $line-height;
+        width: $size;
+        height: $line-height;
+        border-radius: $border-radius;
+        background: $color;
+        animation: animationBurgerBottomReverse $animation-time ease forwards;
+      }
+    }
+  }
+
+  &.open {
+    .label {
+      .burger {
+        &::before {
+          animation: animationBurgerTop $animation-time ease forwards;
+        }
+        &::after {
+          animation: animationBurgerBottom $animation-time ease forwards;
+        }
+      }
+    }
+    .label {
+      &::before {
+        animation: animationOne $animation-time ease forwards;
+      }
+      &::after {
+        animation: animationTwo $animation-time ease forwards;
+      }
+    }
+  }
+}
+
+@keyframes animationOneReverse {
+  0% {
+    transform: rotate(315deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animationOne {
+  0%,
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(315deg);
+  }
+}
+
+@keyframes animationTwoReverse {
+  0% {
+    transform: rotate(405deg);
+  }
+  25% {
+    transform: rotate(450deg);
+  }
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animationTwo {
+  0%,
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(450deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+/* Burger Icon */
+
+@keyframes animationBurgerTopReverse {
+  0%,
+  50% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(12px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes animationBurgerTop {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(12px);
+    opacity: 1;
+  }
+  51%,
+  100% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+@keyframes animationBurgerBottomReverse {
+  0%,
+  50% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes animationBurgerBottom {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+  51%,
+  100% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+}

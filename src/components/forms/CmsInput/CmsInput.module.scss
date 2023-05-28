@@ -1,0 +1,87 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.cms-input-wrapper {
+  position: relative;
+  width: 100%;
+
+  .cms-input {
+    width: 100%;
+    height: vw_size(20, $current);
+    font-size: vw_size(18, $current);
+    border-bottom: 1px solid black;
+    font-family: "arial";
+
+    &::placeholder {
+      color: $grey;
+      font-family: "arial";
+      font-size: vw_size(18, $current);
+    }
+    &.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    &:focus {
+      border-bottom: 1px solid #276b9a;
+    }
+  }
+
+  .cms-error-message {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: vw_size(12, $current);
+    color: $appleRed;
+    font-family: "arial";
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .cms-input-wrapper {
+    .cms-input {
+      height: vw_size(20, $current);
+      font-size: vw_size(18, $current);
+      &::placeholder {
+        font-size: vw_size(20, $current);
+      }
+    }
+    .cms-error-message {
+      font-size: vw_size(12, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .cms-input-wrapper {
+    .cms-input {
+      height: vw_size(24, $current);
+      font-size: vw_size(20, $current);
+      &::placeholder {
+        font-size: vw_size(20, $current);
+      }
+    }
+    .cms-error-message {
+      font-size: vw_size(12, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+
+  .cms-input-wrapper {
+    .cms-input {
+      height: vw_size(24, $current);
+      font-size: vw_size(20, $current);
+      &::placeholder {
+        font-size: vw_size(20, $current);
+      }
+    }
+    .cms-error-message {
+      font-size: vw_size(12, $current);
+    }
+  }
+}

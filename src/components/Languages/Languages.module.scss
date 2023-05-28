@@ -1,0 +1,111 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.cms-languages-wrapper {
+  .languages-header-titles {
+    display: flex;
+    justify-content: space-between;
+    margin-top: vw_size(10, $current);
+
+    .header-title {
+      width: 33%;
+      text-align: center;
+    }
+  }
+  .input-wrapper {
+    width: 33%;
+    .input {
+      width: 100%;
+      font-size: vw_size(16, $current);
+    }
+  }
+  .new-language-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: vw_size(10, $current);
+
+    .button-wrapper {
+      display: flex;
+      width: 33%;
+      justify-content: center;
+    }
+  }
+
+  .language-row-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: vw_size(20, $current);
+    .language-id {
+      width: 33%;
+      text-align: center;
+    }
+    .buttons-wrapper {
+      display: flex;
+      width: 33%;
+      justify-content: space-between;
+    }
+  }
+
+  .button {
+    font-size: vw_size(16, $current);
+    width: vw_size(50, $current);
+    height: vw_size(20, $current);
+  }
+}
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .cms-languages-wrapper {
+    .languages-header-titles {
+      margin-top: vw_size(10, $current);
+    }
+    .input-wrapper {
+      padding-inline: vw_size(10, $current);
+      .input {
+        font-size: vw_size(16, $current);
+      }
+    }
+    .new-language-row {
+      margin-top: vw_size(10, $current);
+    }
+
+    .language-row-wrapper {
+      margin-top: vw_size(20, $current);
+      .buttons-wrapper {
+        justify-content: space-evenly;
+      }
+    }
+
+    .button {
+      font-size: vw_size(16, $current);
+      width: vw_size(100, $current);
+      height: vw_size(20, $current);
+    }
+  }
+}
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+  .cms-languages-wrapper {
+    .languages-header-titles {
+      margin-top: vw_size(10, $current);
+    }
+    .input-wrapper {
+      padding-inline: vw_size(10, $current);
+      .input {
+        font-size: vw_size(16, $current);
+      }
+    }
+    .new-language-row {
+      margin-top: vw_size(10, $current);
+    }
+
+    .language-row-wrapper {
+      margin-top: vw_size(20, $current);
+    }
+
+    .button {
+      font-size: vw_size(20, $current);
+      width: vw_size(200, $current);
+      height: vw_size(35, $current);
+    }
+  }
+}

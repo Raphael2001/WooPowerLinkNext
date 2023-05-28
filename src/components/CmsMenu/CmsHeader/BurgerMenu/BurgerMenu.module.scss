@@ -1,0 +1,65 @@
+@import "src/styles/imports.scss";
+
+$current: $mobile;
+.burger-menu-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background: transparent;
+  pointer-events: none;
+  transition: background 300ms ease-out;
+
+  &.active {
+    .burger-menu-wrapper {
+      right: 0;
+      .backdrop {
+        right: 0;
+      }
+      .burger-menu {
+        pointer-events: all;
+      }
+    }
+  }
+  .burger-menu-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    right: -100vw;
+    transition: right 300ms ease-out;
+    height: 100vh;
+
+    .backdrop {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: all;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 3;
+      right: -100vw;
+    }
+    .burger-menu {
+      width: vw_size(260, $current);
+      height: 100%;
+      background: $cms-menu-background;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .burger-menu-wrapper {
+    .burger-menu-wrapper {
+      .burger-menu {
+        width: vw_size(350, $current);
+      }
+    }
+  }
+}

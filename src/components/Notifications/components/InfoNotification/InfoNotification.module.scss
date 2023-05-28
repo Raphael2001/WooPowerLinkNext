@@ -1,0 +1,8 @@
+.notification-wrapper.info {
+  background-color: #cff4fc;
+  border-color: 1px solid #b6effb;
+  .icon-wrapper {
+    filter: invert(6%) sepia(85%) saturate(4953%) hue-rotate(247deg)
+      brightness(121%) contrast(130%);
+  }
+}

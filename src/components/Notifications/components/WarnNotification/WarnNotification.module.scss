@@ -1,0 +1,8 @@
+.notification-wrapper.warn {
+  background-color: #fff3cd;
+  border-color: 1px solid #ffecb5;
+  .icon-wrapper {
+    filter: invert(81%) sepia(65%) saturate(2570%) hue-rotate(348deg)
+      brightness(101%) contrast(102%);
+  }
+}

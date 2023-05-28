@@ -1,0 +1,11 @@
+.notification-wrapper.success {
+  background-color: #d1e7dd;
+  border-color: 1px solid #badbcc;
+  .icon-wrapper {
+    filter: invert(31%) sepia(87%) saturate(1126%) hue-rotate(84deg)
+      brightness(98%) contrast(104%);
+  }
+}
+
+// to get the filter color enter this link :
+// https://codepen.io/sosuke/pen/Pjoqqp

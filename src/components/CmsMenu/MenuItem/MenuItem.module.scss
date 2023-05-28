@@ -1,0 +1,54 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+.sidebar-menu-link {
+  height: vw_size(60, $current);
+  align-items: center;
+  display: flex;
+  z-index: 20;
+  padding-inline-start: vw_size(20, $current);
+  margin-top: vw_size(10, $current);
+
+  &.active {
+    background-color: $cms-active-menu-tab-background;
+    box-shadow: $cms-active-menu-tab-box-shadow;
+    border-radius: 3px;
+    .sidebar-menu-link-text {
+      color: $cms-menu-item-active;
+    }
+  }
+  .sidebar-menu-link-text {
+    font-size: vw_size(20, $current);
+    font-weight: 200;
+    color: $cms-menu-item;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .sidebar-menu-link {
+    height: vw_size(60, $current);
+    margin-top: vw_size(10, $current);
+
+    padding-inline-start: vw_size(20, $current);
+
+    .sidebar-menu-link-text {
+      font-size: vw_size(20, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop_max;
+  .sidebar-menu-link {
+    margin-top: vw_size(10, $current);
+
+    height: vw_size(100, $current);
+
+    padding-inline-start: vw_size(20, $current);
+
+    .sidebar-menu-link-text {
+      font-size: vw_size(28, $current);
+    }
+  }
+}

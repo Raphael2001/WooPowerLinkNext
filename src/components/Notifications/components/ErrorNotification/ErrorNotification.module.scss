@@ -1,0 +1,8 @@
+.notification-wrapper.error {
+  background-color: #f8d7da;
+  border-color: 1px solid #f5c2c7;
+  .icon-wrapper {
+    filter: invert(12%) sepia(39%) saturate(5854%) hue-rotate(352deg)
+      brightness(105%) contrast(115%);
+  }
+}
